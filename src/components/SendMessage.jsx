@@ -6,7 +6,7 @@ function SendMessage({ scroll }) {
   const [input, setInput] = useState("");
 
   const today = new Date();
-  const time = today.toLocaleTimeString();
+  const time = today.toLocaleString();
 
   async function sendMessage(e) {
     e.preventDefault();
