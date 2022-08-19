@@ -1,5 +1,8 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import Box from "./components/Box";
+import Home from "./components/Home";
+import { auth } from "./firebase";
 
 // style
 const style = {
@@ -8,11 +11,10 @@ const style = {
 };
 
 function App() {
+  const [user] = useAuthState(auth);
   return (
     <div className={style.appContainer}>
-      <div className={style.sectionContainer}>
-        <Box />
-      </div>
+      <div className={style.sectionContainer}>{user ? <Box /> : <Home />}</div>
     </div>
   );
 }

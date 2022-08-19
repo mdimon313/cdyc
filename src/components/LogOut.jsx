@@ -5,7 +5,6 @@ import { AiOutlineLogout } from "react-icons/ai";
 
 function LogOut() {
   const logOut = () => {
-    console.log("click");
     const auth = getAuth();
     return signOut(auth);
   };
