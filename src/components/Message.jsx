@@ -3,7 +3,7 @@ import { auth } from "../firebase";
 
 const style = {
   message: `relative flex items-center shadow-xl m-4 py-2 px-3 rounded-tl-full rounded-tr-full`,
-  name: ` absolute mt-[-4rem] w-[150px] text-gray-600 text-xs`,
+  name: ` absolute mt-[-4rem] w-[150px] text-gray-500 text-md `,
   sent: `bg-[#395dff] text-white flex-row-reverse text-end float-right rounded-bl-full`,
   received: `bg-[#e5e5ea] text-black float-left rounded-br-full`,
 };
