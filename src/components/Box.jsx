@@ -8,6 +8,7 @@ import SendMessage from "./SendMessage";
 function Box() {
   const [messages, setMessages] = useState([]);
   const scroll = useRef();
+  window.document.title = "welcome to talk room";
 
   const style = {
     main: `flex flex-col p-[10px] max-h-[73vh] overflow-hidden overflow-y-scroll`,

@@ -6,7 +6,7 @@ function SendMessage({ scroll }) {
   const [input, setInput] = useState("");
 
   const today = new Date();
-  const time = today.toLocaleString();
+  const dateTime = today.toLocaleString();
 
   async function sendMessage(e) {
     e.preventDefault();
@@ -14,7 +14,7 @@ function SendMessage({ scroll }) {
     await addDoc(collection(db, "messages"), {
       text: input,
       name: displayName,
-      timestamp: time,
+      timestamp: dateTime,
     });
     setInput("");
     scroll.current.scrollIntoView({ behavior: "smooth" });

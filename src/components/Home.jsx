@@ -6,6 +6,7 @@ const style = {
 };
 
 function Home() {
+  window.document.title = "sign up with google";
   /// signup
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
