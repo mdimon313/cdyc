@@ -14,13 +14,11 @@ function Message({ message }) {
       ? `${style.sent}`
       : `${style.received}`;
 
-  const date = new Date();
-  const time = date.toLocaleTimeString();
-  console.log(time);
-
   return (
     <div>
-      <span className="text-sm font-light text-gray-400">{time}</span>
+      <span className="text-[12px] font-light text-gray-400">
+        {message.timestamp}
+      </span>
       <div className={`${style.message} ${messageClass}`}>
         <p className={style.name}>
           {message.name === auth.currentUser.displayName ? "You" : message.name}

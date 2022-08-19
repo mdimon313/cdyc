@@ -1,9 +1,12 @@
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import React, { useState } from "react";
 import { auth, db } from "../firebase";
 
 function SendMessage({ scroll }) {
   const [input, setInput] = useState("");
+
+  const today = new Date();
+  const time = today.toLocaleTimeString();
 
   async function sendMessage(e) {
     e.preventDefault();
@@ -11,7 +14,7 @@ function SendMessage({ scroll }) {
     await addDoc(collection(db, "messages"), {
       text: input,
       name: displayName,
-      timestamp: serverTimestamp(),
+      timestamp: time,
     });
     setInput("");
     scroll.current.scrollIntoView({ behavior: "smooth" });
